@@ -50,10 +50,9 @@ class RequestHandler {
                 scrappedData.rating = ($('#reviewsMedley > div > div.a-fixed-left-grid-col.a-col-left > div.a-section.a-spacing-none.a-spacing-top-mini.cr-widget-ACR > div.a-fixed-left-grid.AverageCustomerReviews.a-spacing-small > div > div.a-fixed-left-grid-col.aok-align-center.a-col-right > div > span > span').text().trim())
                 scrappedData.productDetails =($('#productDetails_db_sections').text().trim())// 
                 scrappedData.technicalInfo = ($('#productDetails_techSpec_section_1').text().trim())
-                resolve(scrappedData)
-                
+                resolve(scrappedData) 
             } catch (e) {
-
+                return reject(e)
             }
         }.bind(this))
     }

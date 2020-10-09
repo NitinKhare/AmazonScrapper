@@ -26,7 +26,7 @@ app.get("/scrap", async function (req, res) {
         let scrappedData = await scrapper(urlToScrap)
         res.json({ status: 200, data: scrappedData })
     } catch (e) {
-        res.json({ status: 503, error: true, description: e })
+        res.status(503).json({ status: 503, error: true, description: e.message })
     }
 })
 
