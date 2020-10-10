@@ -12,7 +12,7 @@ module.exports = async function scrap(uri) {
         delete scrappedData.desktopUnifiedPrice
         delete scrappedData.productDetails
         delete scrappedData.technicalInfo
-        let allData = { ...price, ...additionalInformation, ...technicalInfo, ...scrappedData }
+        let allData = { price, additionalInformation, technicalInfo, otherData:scrappedData }
         return allData
     } catch (e) {
         console.log("An Error Occurred", e)
