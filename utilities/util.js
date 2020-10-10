@@ -21,7 +21,7 @@ module.exports = {
         }
         return hashMap;
     },
-    
+
     findInfo: function (text, labelsToFind = []) {
         let hashMap = {}
         let dataArr = []
@@ -38,5 +38,12 @@ module.exports = {
             }
         }
         return hashMap
+    },
+
+    cleanUp: function (arr, obj = {}) {
+        arr.forEach(element => {
+            delete obj[element]
+        });
+        return obj
     }
 }
